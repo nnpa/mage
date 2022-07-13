@@ -124,7 +124,7 @@ class InventoryController extends GameController
                         if($this->checkAttr($user,$item)){
                             $userItem->delete();
                             $user->$type = $id;
-                            $user->save(false);
+                            $user->save();
                         }
                     }
                 }else {
@@ -142,7 +142,7 @@ class InventoryController extends GameController
                         if($this->checkAttr($user,$item)){
                             $userItem->delete();
                             $user->$free = $id;
-                            $user->save(false);
+                            $user->save();
                         }
                     }
                 }
@@ -216,7 +216,7 @@ class InventoryController extends GameController
         $user->woter = 0;
         $user->earth = 0;
         $user->air = 0;
-        $user->save(false);
+        $user->save();
         return $this->redirect(['/inventory/index']);
 
     }
