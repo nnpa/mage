@@ -188,6 +188,14 @@ class BattleController extends GameController
         $id = \Yii::$app->user->identity->id;
         $user = Users::find()->where(['id' => $id])->one();
         
+        if($user->battle_id == 0){
+            return $this->redirect(['/battle/index']);exit;
+        }
+        $battle = Battle::find()->where(["id" => $user->battle_id])->one();
+        if($battle->started == 0 || $battle->started == 3){
+            
+            return $this->redirect(['/battle/index']);exit;
+        }
         
         $Command1 = BattleUser::find()->where(["battle_id" => $user->battle_id,"command" => 1])->all();
         $Command2 = BattleUser::find()->where(["battle_id" => $user->battle_id,"command" => 2])->all();
