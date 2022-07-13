@@ -417,7 +417,7 @@ class BattleController extends GameController
             $arthCost = $this->getManaCost($battleUser->max_mp,$loadUser->mental,"earth");
             if($battleUser->mp >= $arthCost){
                 $battleUser->mp = $battleUser->mp - $arthCost;
-                $battleUser->save(true);
+                $battleUser->save(false);
 
                 $battleUserEnemys = BattleUser::find()->where(["battle_id" => $user->battle_id,"command" => $enemyCommand])->andWhere(['!=', 'hp', 0])->all();
                 $text = "<b>$loadUser->login</b> нанес удар <span style='color:green'>землей</span> по: ";
@@ -432,11 +432,11 @@ class BattleController extends GameController
                     }
                     $battleEnemy->hp = $battleEnemy->hp - $damage;
                     $damageCount = $damageCount + $damage;
-                    $battleEnemy->save(true);
+                    $battleEnemy->save(false);
                     $text .= " <b>$loadEnemy->login</b> - $damage " ;
                 }
                 $battleUser->damage = $battleUser->damage + $damageCount;
-                $battleUser->save(true);
+                $battleUser->save(false);
                 
                 $battleHistory = new BattleHistory();
                 $battleHistory->battle_id = $user->battle_id;
@@ -453,7 +453,7 @@ class BattleController extends GameController
             $fireCost = $this->getManaCost($battleUser->max_mp,$loadUser->mental,"fire");
             if($battleUser->mp >= $fireCost){
                 $battleUser->mp = $battleUser->mp - $fireCost;
-                $battleUser->save(true);
+                $battleUser->save(false);
                 
                 $damage = $loadUser->fire + 0.6 * $loadUser->intelligence - $loadUserEnemy->fire * 2;
                 $damage = ceil($damage);
@@ -463,9 +463,9 @@ class BattleController extends GameController
                 }
                 
                 $battleUserEnemy->hp = $battleUserEnemy->hp - $damage;
-                $battleUserEnemy->save(true);
+                $battleUserEnemy->save(false);
                 $battleUser->damage = $battleUser->damage + $damage;
-                $battleUser->save(true);
+                $battleUser->save(false);
                 
                 
                 $text = "<b>$loadUser->login</b> нанес удар <span style='color:red'>огнем</span> по <b>$loadUserEnemy->login</b> - $damage";
@@ -492,9 +492,9 @@ class BattleController extends GameController
                 if($battleUser->max_xp < $battleUser->hp){
                     $battleUser->hp = $battleUser->max_xp;
                 }
-                $battleUser->save(true);
+                $battleUser->save(false);
                 $battleUser->damage = $battleUser->damage + $heal;
-                $battleUser->save(true);
+                $battleUser->save(false);
                 $text = "<b>$loadUser->login</b> исцелил себя на  <span style='color:#7FFF00'>+$heal</span>";
                 $battleHistory = new BattleHistory();
                 $battleHistory->battle_id = $user->battle_id;
@@ -512,7 +512,7 @@ class BattleController extends GameController
             $airCost = $this->getManaCost($battleUser->max_mp,$loadUser->mental,"fire");
             if($battleUser->mp >= $airCost){
                 $battleUser->mp = $battleUser->mp - $airCost;
-                $battleUser->save(true);
+                $battleUser->save(false);
                 
                 $damage = $loadUser->air + (0.4 * $loadUser->intelligence) - $loadUserEnemy->air;
                 $damage = ceil($damage);
@@ -522,10 +522,10 @@ class BattleController extends GameController
                 }
                 
                 $battleUserEnemy->hp = $battleUserEnemy->hp - $damage;
-                $battleUserEnemy->save(true);
+                $battleUserEnemy->save(false);
                 
                 $battleUser->damage = $battleUser->damage + $damage;
-                $battleUser->save(true);
+                $battleUser->save(false);
                 
                 $text = "<b>$loadUser->login</b> нанес удар <span style='color:LightSkyBlue'>воздухом</span> по <b>$loadUserEnemy->login</b> - $damage";
                 $battleHistory = new BattleHistory();
@@ -630,7 +630,7 @@ class BattleController extends GameController
                     $user->level = $exp->level;
 
                 }
-                $user->save(true);  
+                $user->save(false);  
             }
             
         }

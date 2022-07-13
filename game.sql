@@ -39,10 +39,6 @@ CREATE TABLE `battle` (
 -- Дамп данных таблицы `battle`
 --
 
-INSERT INTO `battle` (`id`, `started`, `time`, `level`) VALUES
-(22, 1, 1657653659, 1),
-(21, 3, 1657647582, 1),
-(20, 1, 1657637943, 0);
 
 -- --------------------------------------------------------
 
@@ -60,41 +56,6 @@ CREATE TABLE `battle_history` (
 -- Дамп данных таблицы `battle_history`
 --
 
-INSERT INTO `battle_history` (`id`, `battle_id`, `text`) VALUES
-(426, 22, '<b>test</b> нанес удар по ногам <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(425, 22, '<b>test</b> нанес удар в голову <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(424, 22, '<b>test</b> нанес удар по ногам <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(423, 22, '<b>test</b> нанес удар по ногам <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(422, 22, '<b>test</b> нанес удар в голову <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(421, 22, '<b>test</b> нанес удар <span style=\'color:green\'>землей</span> по:  <b>test2</b> - 23 '),
-(420, 22, '<b>test</b> нанес удар <span style=\'color:LightSkyBlue\'>воздухом</span> по <b>test2</b> - 35'),
-(419, 22, '<b>test</b> нанес удар <span style=\'color:red\'>огнем</span> по <b>test2</b> - 36'),
-(418, 22, '<b>test</b> нанес удар <span style=\'color:red\'>огнем</span> по <b>test2</b> - 36'),
-(417, 22, '<b>test</b> нанес удар <span style=\'color:red\'>огнем</span> по <b>test2</b> - 36'),
-(416, 22, '<b>test</b> нанес удар <span style=\'color:red\'>огнем</span> по <b>test2</b> - 36'),
-(415, 22, '<b>test</b> нанес удар в голову <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(414, 20, '<b>test2</b> нанес удар по ногам <b>test</b> -51 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(413, 20, '<b>test2</b> нанес удар в голову <b>test</b> -<span style=\'color:red\'>87</span> (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(412, 20, '<b>test2</b> нанес удар в голову <b>test</b> -51 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(411, 20, '<b>test2</b> нанес удар <span style=\'color:LightSkyBlue\'>воздухом</span> по <b>test</b> - 0'),
-(410, 20, '<b>test2</b> исцелил себя на  <span style=\'color:#7FFF00\'>+15</span>'),
-(409, 20, '<b>test2</b> нанес удар <span style=\'color:red\'>огнем</span> по <b>test</b> - 0'),
-(408, 20, '<b>test2</b> нанес удар <span style=\'color:green\'>землей</span> по:  <b>test</b> - 0 '),
-(407, 20, '<b>test2</b> нанес удар по ногам <b>test</b> -51 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(406, 20, '<b>test</b> нанес удар <span style=\'color:LightSkyBlue\'>воздухом</span> по <b>test2</b> - 35'),
-(405, 20, '<b>test</b> исцелил себя на  <span style=\'color:#7FFF00\'>+90</span>'),
-(404, 20, '<b>test</b> нанес удар <span style=\'color:red\'>огнем</span> по <b>test2</b> - 36'),
-(403, 20, '<b>test</b> нанес удар <span style=\'color:green\'>землей</span> по:  <b>test2</b> - 23 '),
-(402, 20, '<b>test</b> нанес удар в голову <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(401, 20, '<b>test</b> нанес удар в голову <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(400, 20, '<b>test2</b> увернулся от удара <b>test</b>'),
-(399, 20, '<b>test</b> нанес удар по корпусу <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(398, 20, '<b>test</b> нанес удар в голову <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)'),
-(397, 20, '<b>test</b> нанес удар <span style=\'color:LightSkyBlue\'>воздухом</span> по <b>test2</b> - 35'),
-(396, 20, '<b>test</b> исцелил себя на  <span style=\'color:#7FFF00\'>+90</span>'),
-(395, 20, '<b>test</b> нанес удар <span style=\'color:red\'>огнем</span> по <b>test2</b> - 36'),
-(394, 20, '<b>test</b> нанес удар <span style=\'color:green\'>землей</span> по:  <b>test2</b> - 23 '),
-(393, 20, '<b>test</b> нанес удар по ногам <b>test2</b> -27 (<span style=\'color:LightSkyBlue\'>воздух</span>)');
 
 -- --------------------------------------------------------
 
@@ -113,9 +74,6 @@ CREATE TABLE `battle_queue` (
 -- Дамп данных таблицы `battle_queue`
 --
 
-INSERT INTO `battle_queue` (`id`, `user_id`, `enemy_id`, `battle_id`) VALUES
-(223, 2, 1, 22),
-(202, 1, 2, 20);
 
 -- --------------------------------------------------------
 
@@ -140,19 +98,7 @@ CREATE TABLE `battle_user` (
 -- Дамп данных таблицы `battle_user`
 --
 
-INSERT INTO `battle_user` (`id`, `user_id`, `hp`, `max_xp`, `mp`, `max_mp`, `command`, `cd`, `battle_id`, `damage`) VALUES
-(7, 2, -23, 350, 30, 30, 2, 1657486553, 15, 0),
-(6, 1, 200, 200, 19, 75, 1, 1657486817, 15, 0),
-(4, 2, 698, 350, 3, 30, 1, 1657483621, 14, 0),
-(5, 1, 0, 200, 3, 75, 2, 1657483640, 14, 0),
-(8, 1, 0, 200, 7, 75, 1, 1657489761, 16, 0),
-(9, 2, 103, 350, 25, 30, 2, 1657487549, 16, 0),
-(10, 1, 200, 200, 75, 75, 1, 1657637822, 19, 0),
-(11, 1, 0, 200, 430, 75, 1, 1657638102, 20, 503),
-(12, 2, 22, 350, 2, 30, 2, 1657638200, 20, 255),
-(13, 1, 200, 200, 75, 75, 1, 1657647522, 21, 0),
-(14, 1, 200, 200, 7, 75, 1, 1657653830, 22, 364),
-(15, 2, 0, 350, 30, 30, 2, 1657653609, 22, 0);
+
 
 -- --------------------------------------------------------
 
@@ -170,28 +116,7 @@ CREATE TABLE `chat` (
 -- Дамп данных таблицы `chat`
 --
 
-INSERT INTO `chat` (`id`, `text`, `time`) VALUES
-(23, ' [17:22] [<b>test</b>] : 22 <br>', 1657560150),
-(24, ' [17:22] [<b>test</b>] : 23 <br>', 1657560179),
-(25, ' [17:23] [<b>test</b>] : 23 <br>', 1657560185),
-(26, ' [17:23] [<b>test</b>] : 24 <br>', 1657560190),
-(27, ' [17:23] [<b>test</b>] : 25 <br>', 1657560205),
-(28, ' [17:23] [<b>test</b>] : 26 <br>', 1657560207),
-(29, ' [17:23] [<b>test</b>] : 27 <br>', 1657560209),
-(30, ' [17:24] [<b>test</b>] : 28 <br>', 1657560256),
-(31, ' [17:24] [<b>test</b>] : 29 <br>', 1657560264),
-(32, ' [17:24] [<b>test</b>] : 30 <br>', 1657560275),
-(33, ' [17:25] [<b>test</b>] : 31 <br>', 1657560321),
-(34, ' [17:27] [<b>test</b>] : 32 <br>', 1657560429),
-(35, ' [17:27] [<b>test</b>] : 33 <br>', 1657560430),
-(36, ' [17:27] [<b>test</b>] : 34 <br>', 1657560432),
-(16, ' [17:19] [<b>test</b>] : 15 <br>', 1657559979),
-(17, ' [17:20] [<b>test</b>] : 16 <br>', 1657560019),
-(18, ' [17:20] [<b>test</b>] : 17 <br>', 1657560022),
-(19, ' [17:20] [<b>test</b>] : 18 <br>', 1657560025),
-(20, ' [17:20] [<b>test</b>] : 19 <br>', 1657560027),
-(21, ' [17:20] [<b>test</b>] : 20 <br>', 1657560031),
-(22, ' [17:22] [<b>test</b>] : 21 <br>', 1657560148);
+
 
 -- --------------------------------------------------------
 
@@ -535,9 +460,7 @@ CREATE TABLE `Users` (
 -- Дамп данных таблицы `Users`
 --
 
-INSERT INTO `Users` (`id`, `login`, `email`, `password`, `confirm_code`, `reset_code`, `level`, `hp`, `mp`, `win`, `lose`, `exp`, `gold`, `strength`, `intuition`, `dexterity`, `endurance`, `intelligence`, `mental`, `fire`, `woter`, `earth`, `air`, `stats`, `hp_regen_time`, `mp_regen_time`, `battle_id`, `confirmed`, `authKey`, `helm`, `weapon`, `armor`, `earrings`, `necklace`, `ring1`, `ring2`, `ring3`, `shild`, `leggings`, `boots`, `belt`, `defence`, `damage`, `active`, `text`) VALUES
-(1, 'test', 'jetananas@yandex.ru', '123', 'b91a1cf29646d3859d816a7055b6c03b', '44ac32eccc196a4ec9830c99aeff0e2a', 1, 25, 0, 1, 3, 0, 8310, 5, 5, 5, 20, 20, 0, 0, 0, 0, 15, 0, -1, -1, 0, 1, '', 85, 176, 98, 188, 182, 13, 13, 13, 61, 152, 134, 116, 0, 0, 1657659571, 'Имя иван \r\nНанесено урона'),
-(2, 'test2', 'jetananas@yandex.ru', '123', 'b91a1cf29646d3859d816a7055b6c03b', '44ac32eccc196a4ec9830c99aeff0e2a', 1, 25, 0, 3, 3, 0, 8760, 20, 5, 5, 20, 0, 1, 0, 0, 0, 9, 0, -1, -1, 0, 1, '', 79, 158, 91, 194, 182, 13, 13, 13, 61, 140, 128, 104, 0, 0, 1657653999, '');
+
 
 -- --------------------------------------------------------
 

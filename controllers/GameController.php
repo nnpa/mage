@@ -17,7 +17,8 @@ class GameController extends Controller
            $id = \Yii::$app->user->identity->id;
             $user = Users::find()->where(['id' => $id])->one();
             $user->active = time() + 60 * 2;
-            $user->save(true);
+            $user->save(false);
+            
             if($user->battle_id != 0){
                 $battle = Battle::find()->where(["id" => $user->battle_id])->one();
                 if($battle->started == 1){
