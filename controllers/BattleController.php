@@ -116,7 +116,7 @@ class BattleController extends GameController
             }else{
                 $battle->level = 0;
             }
-            $battle->time = time() + 60 * 1;
+            $battle->time = time() + 60 * 5;
             $battle->started = 0;
             
             $battle->save(false);
