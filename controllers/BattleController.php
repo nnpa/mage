@@ -71,13 +71,13 @@ class BattleController extends GameController
                $battleUsersCount = BattleUser::find()->where(["battle_id" => $user->battle_id])->count();
                if($battleUsersCount >= 2){
                     $battle->started = 1;
-                    $battle->save(true);
+                    $battle->save(false);
     
                } else {
                     $user->battle_id = 0;
-                    $user->save(true);
+                    $user->save(false);
                     $battle->started = 3;
-                    $battle->save(true);
+                    $battle->save(false);
                }
            }
         }
@@ -86,7 +86,7 @@ class BattleController extends GameController
         if(isset($_POST["battle"]) && !empty($_POST['battle']) && $user->battle_id == 0){
             $battleId = $_POST['battle'];
             $user->battle_id = $battleId;
-            $user->save(true);
+            $user->save(false);
             
             $user = $this->loadUser($user->id);
             
@@ -139,7 +139,7 @@ class BattleController extends GameController
             
             $user = Users::find()->where(['id' => $id])->one();
             $user->battle_id = $battle->id;
-            $user->save(true);
+            $user->save(false);
             return $this->redirect(['/battle/index']);exit;
         }
         
@@ -300,7 +300,7 @@ class BattleController extends GameController
                 $battleQueue->battle_id = $battleId;
                 $battleQueue->user_id = $userId;
                 $battleQueue->enemy_id = $enemy->user_id;
-                $battleQueue->save(true);
+                $battleQueue->save(false);
             }
         }
     }
@@ -338,7 +338,7 @@ class BattleController extends GameController
         }
         
         $battleUser->cd = time() + 2;
-        $battleUser->save(true);
+        $battleUser->save(false);
         
         $loadUser = $this->loadUser($id);
         $loadUserEnemy = $this->loadUser($enemy->id);
@@ -381,8 +381,8 @@ class BattleController extends GameController
                 $battleUserEnemy->hp = 0;
             }
             
-            $battleUserEnemy->save(true);
-            $battleUser->save(true);
+            $battleUserEnemy->save(false);
+            $battleUser->save(false);
 
             $dmgText = $damage;
             
