@@ -86,7 +86,7 @@ class BattleController extends GameController
         if(isset($_POST["battle"]) && !empty($_POST['battle']) && $user->battle_id == 0){
             $battleId = $_POST['battle'];
             $user->battle_id = $battleId;
-            $user->save(false);
+            $user->save(true);
             
             $user = $this->loadUser($user->id);
             
