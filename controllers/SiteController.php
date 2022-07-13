@@ -261,7 +261,7 @@ class SiteController extends GameController
                 mail($to, $subject, $message, $headers);
                 
                 return $this->render('message',[
-                    "message" => "На вашу почту отправлен код активации"
+                    "message" => "На вашу почту отправлен код активации проверьте папку спам"
                 ]);
                 
                 exit;
@@ -284,7 +284,7 @@ class SiteController extends GameController
                 $user->confirmed = 1;
                 $user->save(false);
                 return $this->render('message',[
-                    "message" => "Ва аккаунт активирован можете авторизоваться"
+                    "message" => "Ва аккаунт активирован можете <a href='/site/login' > авторизоваться</a>"
                 ]);
                 exit;
             }

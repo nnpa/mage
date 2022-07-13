@@ -71,7 +71,7 @@ class BattleController extends GameController
                $battleUsersCount = BattleUser::find()->where(["battle_id" => $user->battle_id])->count();
                if($battleUsersCount >= 2){
                     $battle->started = 1;
-                    var_dump($battle->save(false));
+                    $battle->save(false);
                     
                } else {
                     $user->battle_id = 0;
