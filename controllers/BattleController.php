@@ -86,8 +86,9 @@ class BattleController extends GameController
         if(isset($_POST["battle"]) && !empty($_POST['battle']) && $user->battle_id == 0){
             $battleId = $_POST['battle'];
             $user->battle_id = $battleId;
-            $user->save(true);
-            
+            var_dump($user->save(false));
+            print_r($battleId);
+            exit;
             $user = $this->loadUser($user->id);
             
             $userBattle = new BattleUser();
@@ -101,7 +102,7 @@ class BattleController extends GameController
             
             $userBattle->cd   = time();
             $userBattle->damage   = 0;
-
+            
             $userBattle->save(false);
             return $this->redirect(['/battle/index']);exit;
         }
