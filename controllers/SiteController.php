@@ -315,7 +315,7 @@ class SiteController extends GameController
 
                 mail($to, $subject, $message, $headers);
                 return $this->render('message',[
-                    "message" => "На почту выслана ссылка для сброса пароля"
+                    "message" => "На почту выслана ссылка для сброса пароля, проверьте папку спам"
                 ]);
                 exit;
             }
