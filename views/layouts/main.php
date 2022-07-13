@@ -38,24 +38,26 @@ AppAsset::register($this);
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
+    <?php if(!is_null(\Yii::$app->user->identity)):?>
 
-    <script type="text/javascript">
-        $( document ).ready(function() {
-            window.setInterval(function(){
-                $.get( "/chat/index/", function( data ) {
-                    $( "#chat" ).html( data );
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                window.setInterval(function(){
+                    $.get( "/chat/index/", function( data ) {
+                        $( "#chat" ).html( data );
+                    });
+                }, 10000);
+
+                $( "#send" ).click(function() {
+                    var text = $("#message").val();
+                    $.get( "/chat/send/?message=" + text, function( data ) {
+
+                    });
+                    $("#message").val("");
                 });
-            }, 10000);
-            
-            $( "#send" ).click(function() {
-                var text = $("#message").val();
-                $.get( "/chat/send/?message=" + text, function( data ) {
-                    
-                });
-                $("#message").val("");
             });
-        });
-    </script>
+        </script>
+    <?php endif;?>
 
 <main role="main" class="flex-shrink-0">
     <div class="container">
