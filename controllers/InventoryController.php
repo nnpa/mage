@@ -22,10 +22,10 @@ class InventoryController extends GameController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index'],
+                'only' => ['index','equip','unequip','reset'],
                 'rules' => [
                     [
-                        'actions' => ['index'],
+                        'actions' => ['index','equip','unequip','reset'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

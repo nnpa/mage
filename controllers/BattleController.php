@@ -25,10 +25,10 @@ class BattleController extends GameController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index'],
+                'only' => ['index','battle','info','endbattle','attack'],
                 'rules' => [
                     [
-                        'actions' => ['index'],
+                        'actions' => ['index','battle','info','endbattle','attack'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
