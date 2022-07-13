@@ -142,7 +142,7 @@ class InventoryController extends GameController
                         if($this->checkAttr($user,$item)){
                             $userItem->delete();
                             $user->$free = $id;
-                            $user->save();
+                            $user->save(false);
                         }
                     }
                 }
